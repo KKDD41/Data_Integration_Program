@@ -15,7 +15,11 @@ terraform {
 }
 
 provider "azurerm" {
+  tenant_id       = "8f5a53df-1475-407b-8c6c-d19335e84b0f"
+  subscription_id = "03100c30-2c7f-4cde-9191-784d2798b111"
+
   features {
+
     resource_group {
       prevent_deletion_if_contains_resources = false
     }
@@ -41,11 +45,12 @@ resource "azurerm_resource_group" "rg_di_mentoring" {
 }
 
 resource "azurerm_storage_account" "stdi_mentoring_blob" {
-  name                     = "stdiblob${var.initials}"
+  name                     = "stdiblobacc${var.initials}"
   resource_group_name      = azurerm_resource_group.rg_di_mentoring.name
   location                 = azurerm_resource_group.rg_di_mentoring.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
+  account_kind             = "StorageV2"
 
   is_hns_enabled = true
 }

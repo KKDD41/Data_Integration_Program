@@ -1,68 +1,138 @@
-# Task 1.1
+# Task 1.1 Synapse Pipeline with Copy Data Activity
 
 ## Prerequisites:
 
-1. Create and configure a self-hosted Integration Runtime in Synapse Analytics via UI to connect to MS SQL
-Server. After creation, check the IR status. It should be Running.
-![](./screenshots/ir-local-setup.png)
-![](./screenshots/ir-gui-on-azure.png)
+1. Creation and configuration a self-hosted Integration Runtime in Synapse Analytics via UI to connect to MS SQL
+   Server.
+   ![](./screenshots/ir-local-setup.png)
+   ![](./screenshots/ir-gui-on-azure.png)
+2. In SSMS, `DeploymentScript.sql` script was run on master database with data from `youflix.user.csv`,
+   `youflix.user_subscription_device.csv`.
+   ![](./screenshots/ssms-database-setup.png)
 
-2. Download files - `youflix.user.csv` and `youflix.user_subscription_device.csv` by the link.
+3. In data lake `stdimentoringdatalakexx` and created “youflix” subfolder in “bronze” and "silver" directories.
+   ![](./screenshots/bronze-folder.png)
+   ![](./screenshots/silver-folder.png)
 
-3. Download the script `DeploymentScript.sql` by the link and replace `$(FullScriptDir)` with path to your files
-from step 2.
-4. In SSMS, connect to master database on your local MS SQL Server.
-5. In SSMS, run the DeploymentScript.sql script on master database.
-![](./screenshots/ssms-database-setup.png)
+4. Creation of Synapse Studio linked services to AKV, Azure Table `YouFlixWatermark`, MS SQL Server tables and data
+   lake.
+   ![](./screenshots/linked-services-created.png)
 
-6. Go to your data lake `stdimentoringdatalakexx` and create “youflix” subfolder in “bronze” directory. This is a
-destination folder in the first task (ingestion).
-![](./screenshots/bronze-folder.png)
+5. Creation entity for every source table in `YouFlixWatermark` Azure Table.
+   ![](./screenshots/watermark_table_entities.png)
 
-7. Go to your data lake `stdimentoringdatalakexx` and create “youflix” subfolder in “silver” directory. This is a
-destination folder in the second task (processing).
-![](./screenshots/silver-folder.png)
+6. Creation of sink intergation datasets to data lake folders.
+   ![](./screenshots/integration-datasets.png)
+   File format: 
+   ![](./screenshots/sink-file-format.png)
+   
 
-## Steps to complete:
+## Incremental Copy Pipeline for one table `youflix.device`:
 
-1. Create a linked service to your Azure Key Vault service. There are security requirements:
-• Azure Key Vault name – your kv-di-mentoring-xx service.
-• Authentication method - System Assigned Managed Identity
-• Managed Identity Name - your syn-di-mentoring-xx service.
-![](./screenshots/akv-linked-service.png)
-2. Create an Azure Table YouFlixWatermark in your storage account `stdimentoringdatalakexx` to store
-watermarks.
-3. Create entity for every source table:
-• Use table name as a PartitionKey. RowKey can remain empty.
-• Add property Watermark with Datetime data type to store timestamp of last load. Set the initial value
-of the property `2000-01-01T00:00:00.00Z`.
+1. `LookupOldWatermark` activity:
+   ![](./screenshots/lookup-old-watermark.png)
+2. `LookupNewWatermark` activity:
+   ![](./screenshots/lookup-new-watermark.png)
+3. `IncrementalCopyActivity` source and sink:
+   ![](./screenshots/copy-source.png)
+   Source query:
+   ```sql
+   select 
+       * 
+   from youflix.device 
+   where 
+       created_timestamp > '@{activity('LookupOldWatermark').output.firstRow.Watermark}' 
+       and created_timestamp <= '@{activity('LookupNewWatermark').output.firstRow.NewWatermarkvalue}'
+   ```
+4. `UpdateWatermark` copy activity:
+   ![](./screenshots/update-watermark-sink.png)
+   ![](./screenshots/update-watermark-source.png)
+   Columns mapping:
+   ![](./screenshots/update-watermark-mapping.png)
+5. `GenerateSuccess` activity:
+6. Pipeline with loading of `youflix.device` table run:
+   ![](./screenshots/pipeline-run.png)
+   ![](./screenshots/watermark-device-updated.png)
+   ![](./screenshots/data-added-to-device.png)
 
-4. Create a linked service to your Azure Table. Security requirements:
-• Authentication method – SAS
-• SAS URL should be stored in a separate Azure Key Vault secret. Use Account Key signing method when
-you generate SAS, set Expiry date at least +1 year to the current date.
-5. Create a linked service to your MS SQL Server `[YouflixDB]` database. There are requirements:
-• Connect via integration runtime – your configured self-hosted IR from prerequisites.
-• Store connection string in a separate Azure Key Vault secret.
-• Authentication type – SQL authentication.
-6. Create a linked service to Azure Data Lake Storage Gen 2. Security requirement:
-• configure system-assigned managed identity authentication
-• assign required permissions for Synapse Analytics to write files into Data Lake.
-![](./screenshots/linked-services-created.png)
-7. Create datasets for the source and sink. Source dataset(s) must be configured to read MS SQL Server tables.
-Sink dataset should write csv files with the following settings:
-• Escape character – Backslash (`\`).
-• Quote character – Double quote (`“`).
-• Column delimiter – Comma (`,`).
-• First row as header – `True`.
-• Compression type – `None`.
-• Row delimiter – Default (`\r`,`\n`, or `\r\n`).
-If there is no new data in source SQL table, empty file with header row should be still generated.
-![](./screenshots/integration-datasets.png)
-8. Create a pipeline with copy activity to incrementally load data from `[YouFlixDB]` to the `[data]` container in
-data lake.
-• Use Copy Activity to update table YouFlixWatermark with new watermark values.
-• Use Copy Activity generate “Success.csv” file after successful load and place it into data lake in
-“bronze/youflix”. The file should contain at least empty string inside.
+## Parameterized Incremental Copy Pipeline for one table `youflix.device`:
+
+1. Pipeline parameters:
+2. `LookupOldWatermark` activity:
+3. `LookupNewWatermark` activity:
+4. `IncrementalCopyActivity` source and sink:
+   Source query:
+```sql
+select 
+    * 
+from youflix.device 
+where 
+    created_timestamp > '@{activity('LookupOldWatermark').output.firstRow.Watermark}' 
+    and created_timestamp <= '@{activity('LookupNewWatermark').output.firstRow.NewWatermarkvalue}'
+```
+5. `UpdateWatermark` copy activity:
+   Columns mapping:
+6. `GenerateSuccess` activity:
+7. Pipeline with loading of all `youflix` tables run:
+
+
+
+
+
+
+![](./screenshots/pipeline-run.png)
+• Use Copy Activity generate `“Success.csv”` file after successful load and place it into data lake in
+`“bronze/youflix”`. The file should contain at least empty string inside.
+![](./screenshots/success-of-first-run.png)
 • To reduce cost of your pipeline execution, specify Maximum data integration unit = 2 in each Copy Data
 activity settings.
+
+## Run Scenario:
+
+1. Before starting the run scenario, clear `“bronze/youflix”` folder and re-create `YouFlixDB` database from
+   scratch using DeploymentScript.sql script. It is necessary to get rid of the results of your previous execution
+   and testing activities.
+2. Go to data lake `stdimentoringdatalakexx` and proceed to Storage browser, then click on Tables and edit
+   each of entity by setting watermark value to `2000-01-01T00:00:00.00Z`.
+   ![](./screenshots/watermark_table_entities.png)
+3. Take screenshot(s) of your pipeline.
+4. Go to your created pipeline and execute it manually.
+5. Once the job succeeds, check `“bronze/youflix”` folder, it should contain 4 folders and `Success.csv` file.
+6. Take screenshot(s) of the target folder.
+   ![](./screenshots/data-added-to-device.png)
+7. Go inside each of 4 folders and take screenshot(s) of files generated.
+8. In Synapse Workspace, navigate to Data section, find in Linked tab your container, open `“bronze/youflix”`
+   and select top 10 rows for each file using SQL queries.
+9. Take screenshot(s) of SQL queries and result output.
+10. In Synapse Workspace, navigate to Data section, find in Linked tab your container, open `“bronze/youflix”`
+    and check number of rows for each file using SQL query:
+
+- youflix_device csv – 30
+- youflix_subscription csv – 3
+- youflix_user csv – 10000
+- youflix_user_subscription_device csv – 26746
+
+11. Take screenshot(s) of SQL queries with count values.
+12. Go to your Azure Table and take a screenshot of new watermark values.
+13. Without changing source data, execute your pipeline one more time.
+14. In Synapse Workspace, navigate to Data section, find in Linked tab your container, open “bronze/youflix”
+    and check number of rows for each newly loaded file using SQL query:
+
+- youflix_device csv – 0
+- youflix_subscription csv – 0
+- youflix_user csv – 0
+- youflix_user_subscription_device csv – 0
+
+15. Take screenshot(s) of SQL queries with count values.
+16. Connect to MS SQL Server YouFlixDB database and run the following command:
+    EXEC youflix_internal.sp_youflix_tables_insert_update 10000, 15;
+17. Execute pipeline manually again.
+18. In Synapse Workspace, navigate to Data section, find in Linked tab your container, open “bronze/youflix”
+    and check number of rows for each newly loaded file using SQL query:
+
+- youflix_device csv – 0
+- youflix_subscription csv – 0
+- youflix_user csv – 10015
+- youflix_user_subscription_device csv – 26596
+
+19. Take screenshot(s) of SQL queries with count values.

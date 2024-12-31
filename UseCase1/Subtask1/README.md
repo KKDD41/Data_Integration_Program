@@ -23,9 +23,8 @@
 
 6. Creation of sink intergation datasets to data lake folders.
    ![](./screenshots/integration-datasets.png)
-   File format: 
+   File format:
    ![](./screenshots/sink-file-format.png)
-   
 
 ## Incremental Copy Pipeline for one table `youflix.device`:
 
@@ -58,34 +57,48 @@
 ## Parameterized Incremental Copy Pipeline for one table `youflix.device`:
 
 1. Pipeline parameters:
+   `json
+   [
+       {
+           "TABLE_NAME": "device"
+       },
+       {
+           "TABLE_NAME": "user"
+       },
+       {
+           "TABLE_NAME": "subscription"
+       },
+       {
+           "TABLE_NAME": "user_subscription_device"
+       }
+   ]`
 2. `LookupOldWatermark` activity:
+   ![](./screenshots/lookup-old-watermark-foreach.png)
 3. `LookupNewWatermark` activity:
+   ![](./screenshots/lookup-new-watermark-foreach.png)
 4. `IncrementalCopyActivity` source and sink:
    Source query:
 ```sql
 select 
     * 
-from youflix.device 
+from youflix.@{item().TABLE_NAME
 where 
     created_timestamp > '@{activity('LookupOldWatermark').output.firstRow.Watermark}' 
     and created_timestamp <= '@{activity('LookupNewWatermark').output.firstRow.NewWatermarkvalue}'
 ```
+
 5. `UpdateWatermark` copy activity:
+   ![](./screenshots/update-watermark-source.png)
+   ![](./screenshots/update-watermark-sink-foreach.png)
    Columns mapping:
+   ![](./screenshots/update-watermark-mapping-foreach.png)
 6. `GenerateSuccess` activity:
+   ![](./screenshots/generate-success-foreach-sink.png)
+   ![](./screenshots/generate-success-foreach-source.png)
 7. Pipeline with loading of all `youflix` tables run:
+   ![](./screenshots/foreach-success.png)
 
 
-
-
-
-
-![](./screenshots/pipeline-run.png)
-• Use Copy Activity generate `“Success.csv”` file after successful load and place it into data lake in
-`“bronze/youflix”`. The file should contain at least empty string inside.
-![](./screenshots/success-of-first-run.png)
-• To reduce cost of your pipeline execution, specify Maximum data integration unit = 2 in each Copy Data
-activity settings.
 
 ## Run Scenario:
 

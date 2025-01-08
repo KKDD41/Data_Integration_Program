@@ -57,7 +57,7 @@
 ## Parameterized Incremental Copy Pipeline for one table `youflix.device`:
 
 1. Pipeline parameters:
-   `json
+   ```json
    [
        {
            "TABLE_NAME": "device"
@@ -71,7 +71,7 @@
        {
            "TABLE_NAME": "user_subscription_device"
        }
-   ]`
+   ]```
 2. `LookupOldWatermark` activity:
    ![](./screenshots/lookup-old-watermark-foreach.png)
 3. `LookupNewWatermark` activity:
@@ -83,7 +83,7 @@
 ```sql
 select 
     * 
-from youflix.@{item().TABLE_NAME
+from youflix.@{item().TABLE_NAME}
 where 
     created_timestamp > '@{activity('LookupOldWatermark').output.firstRow.Watermark}' 
     and created_timestamp <= '@{activity('LookupNewWatermark').output.firstRow.NewWatermarkvalue}'

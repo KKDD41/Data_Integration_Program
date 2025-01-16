@@ -20,9 +20,16 @@
    • Each pipeline execution consumes the same amount of resources.
    ![](./screenshots/pipeline-month-cost.png)
 
-5. Using the same approach and assumptions, calculate cost of single execution and monthly cost of pipeline
-   from the Task 1.3.
-6. Calculate monthly cost of Databricks cluster owning with the following assumptions:
-   • The cluster works 24 / 7.
-   • You use Pay As You Go payment method.
-   ![](./screenshots/databricks-price.png)
+5. Calculate monthly cost of Databricks cluster owning with the following assumptions:
+  
+   - The cluster works 24 / 7.
+   - You use Pay-As-You-Go payment method.
+   
+   DBU count for instance `D3 v2` is 0.75 DBU.
+   ![](./screenshots/dv2-series-pricing.png)
+
+   Pipeline with notebook `uc1_load_bronze_to_silver` runs hourly for ~2 minutes each run (~0.03 hours). 
+   Therefore, ~22 hours / month.
+
+   DBU monthly cost:
+   ![](./screenshots/dbu-monthly.png)

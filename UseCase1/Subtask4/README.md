@@ -7,8 +7,6 @@
 2. Take a screenshot of the Pipeline run consumption report.
    ![](./screenshots/copy-pipeline-consumption.png)
 
-   <table role="table" class="p-datatable-table ng-star-inserted" id="pr_id_14-table"><!----><thead class="p-datatable-thead"><tr _ngcontent-ng-c1635484556="" class="ng-star-inserted"><th _ngcontent-ng-c1635484556="" tabindex="0" class="textColumn ng-star-inserted" aria-label=""><div _ngcontent-ng-c1635484556="" title=""></div></th><th _ngcontent-ng-c1635484556="" tabindex="0" class="textColumn ng-star-inserted" aria-label="Quantity"><div _ngcontent-ng-c1635484556="" title="Quantity">Quantity</div></th><th _ngcontent-ng-c1635484556="" tabindex="0" class="textColumn ng-star-inserted" aria-label="Unit"><div _ngcontent-ng-c1635484556="" title="Unit">Unit</div></th><!----></tr><!----></thead><!----><tbody class="p-element p-datatable-tbody"><!----><tr _ngcontent-ng-c1635484556="" class="p-element p-selectable-row ng-star-inserted" tabindex="0"><td _ngcontent-ng-c1635484556="" class="ng-star-inserted"><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" class="headerCell ng-star-inserted" aria-label="Pipeline orchestration"><div _ngcontent-ng-c1635484556="">Pipeline orchestration</div><!----></div><!----><!----><!----><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><!----></tr><!----><!----><!----><!----><!----><!----><tr _ngcontent-ng-c1635484556="" class="p-element p-selectable-row ng-star-inserted" tabindex="0"><td _ngcontent-ng-c1635484556="" class="ng-star-inserted"><!----><!----><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" class="keyCell ng-star-inserted" aria-label="Activity runs"> Activity runs </div><!----><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" aria-label="16" class="ng-star-inserted"> 16 </div><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" aria-label="Activity runs" class="ng-star-inserted"> Activity runs </div><!----><!----><!----><!----></td><!----></tr><!----><!----><!----><!----><!----><!----><tr _ngcontent-ng-c1635484556="" class="p-element p-selectable-row ng-star-inserted" tabindex="0"><td _ngcontent-ng-c1635484556="" class="ng-star-inserted"><!----><!----><!----><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><!----></tr><!----><!----><!----><!----><!----><!----><tr _ngcontent-ng-c1635484556="" class="p-element p-selectable-row ng-star-inserted" tabindex="0"><td _ngcontent-ng-c1635484556="" class="ng-star-inserted"><!----><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" class="subHeaderCell ng-star-inserted" aria-label="Self-hosted integration runtime"> Self-hosted integration runtime </div><!----><!----><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><!----></tr><!----><!----><!----><!----><!----><!----><tr _ngcontent-ng-c1635484556="" class="p-element p-selectable-row ng-star-inserted" tabindex="0"><td _ngcontent-ng-c1635484556="" class="ng-star-inserted"><!----><!----><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" class="keyCell ng-star-inserted" aria-label="Activity runs"> Activity runs </div><!----><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" aria-label="15" class="ng-star-inserted"> 15 </div><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" aria-label="Activity runs" class="ng-star-inserted"> Activity runs </div><!----><!----><!----><!----></td><!----></tr><!----><!----><!----><!----><!----><!----><tr _ngcontent-ng-c1635484556="" class="p-element p-selectable-row ng-star-inserted" tabindex="0"><td _ngcontent-ng-c1635484556="" class="ng-star-inserted"><!----><!----><!----><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><!----></tr><!----><!----><!----><!----><!----><!----><tr _ngcontent-ng-c1635484556="" class="p-element p-selectable-row ng-star-inserted" tabindex="0"><td _ngcontent-ng-c1635484556="" class="ng-star-inserted"><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" class="headerCell ng-star-inserted" aria-label="Pipeline execution"><div _ngcontent-ng-c1635484556="">Pipeline execution</div><!----></div><!----><!----><!----><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><!----></tr><!----><!----><!----><!----><!----><!----><tr _ngcontent-ng-c1635484556="" class="p-element p-selectable-row ng-star-inserted" tabindex="0"><td _ngcontent-ng-c1635484556="" class="ng-star-inserted"><!----><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" class="subHeaderCell ng-star-inserted" aria-label="Self-hosted integration runtime"> Self-hosted integration runtime </div><!----><!----><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><!----></tr><!----><!----><!----><!----><!----><!----><tr _ngcontent-ng-c1635484556="" class="p-element p-selectable-row ng-star-inserted" tabindex="0"><td _ngcontent-ng-c1635484556="" class="ng-star-inserted"><!----><!----><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" class="keyCell ng-star-inserted" aria-label="Data movement activities"> Data movement activities </div><!----><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" aria-label="0.1500" class="ng-star-inserted"> 0.1500 </div><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" aria-label="Execution hours" class="ng-star-inserted"> Execution hours </div><!----><!----><!----><!----></td><!----></tr><!----><!----><!----><!----><!----><!----><tr _ngcontent-ng-c1635484556="" class="p-element p-selectable-row ng-star-inserted" tabindex="0"><td _ngcontent-ng-c1635484556="" class="ng-star-inserted"><!----><!----><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" class="keyCell ng-star-inserted" aria-label="Pipeline activities"> Pipeline activities </div><!----><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" aria-label="0.1000" class="ng-star-inserted"> 0.1000 </div><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" aria-label="Execution hours" class="ng-star-inserted"> Execution hours </div><!----><!----><!----><!----></td><!----></tr><!----><!----><!----><!----><!----><!----><tr _ngcontent-ng-c1635484556="" class="p-element p-selectable-row ng-star-inserted" tabindex="0"><td _ngcontent-ng-c1635484556="" class="ng-star-inserted"><!----><!----><!----><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><!----></tr><!----><!----><!----><!----><!----><!----><tr _ngcontent-ng-c1635484556="" class="p-element p-selectable-row ng-star-inserted" tabindex="0"><td _ngcontent-ng-c1635484556="" class="ng-star-inserted"><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" class="headerCell ng-star-inserted"><div _ngcontent-ng-c1635484556=""></div><!----></div><!----><!----><!----><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" class="button-content documentation-link ng-star-inserted" aria-label="Learn more"><div _ngcontent-ng-c1635484556="">Learn more</div><div _ngcontent-ng-c1635484556="" class="madrid-icon icon-redirect icon-size-12 icon"></div></div><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><!----></tr><!----><!----><!----><!----><!----><!----><tr _ngcontent-ng-c1635484556="" class="p-element p-selectable-row ng-star-inserted" tabindex="0"><td _ngcontent-ng-c1635484556="" class="ng-star-inserted"><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" class="headerCell ng-star-inserted"><div _ngcontent-ng-c1635484556=""></div><!----></div><!----><!----><!----><div _ngcontent-ng-c1635484556="" tabindex="0" role="none" class="button-content documentation-link ng-star-inserted" aria-label="Pricing calculator"><div _ngcontent-ng-c1635484556="">Pricing calculator</div><div _ngcontent-ng-c1635484556="" class="madrid-icon icon-redirect icon-size-12 icon"></div></div><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><td _ngcontent-ng-c1635484556="" class="valueCell ng-star-inserted"><!----><!----><!----><!----></td><!----></tr><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></tbody><!----></table>
-
 3. Using the information from the consumption report calculate cost of single pipeline execution. Provide
    detailed calculations by activity types (Data movement, Pipeline and External) and Integration runtime
    types (Azure Integration Runtime and Self-Hosted Integration Runtime).
@@ -16,12 +14,218 @@
    ![](./screenshots/pipeline-run-cost.png)
 
 4. Calculate monthly cost with the following assumptions:
-   • Pipeline is executed hourly.
-   • Each pipeline execution consumes the same amount of resources.
+   - Pipeline is executed hourly.
+   - Each pipeline execution consumes the same amount of resources.
    ![](./screenshots/pipeline-month-cost.png)
 
+5. Calculate cost of the second pipeline in the same way.
+   ![](./screenshots/databricks-pipeline-consumption.png)
+
+   **Table with final consumption costs**:
+   <table>
+   <tbody>
+      <tr>
+         <td>
+            Activity Type
+         </td>
+         <td>
+            Runtime
+         </td>
+         <td>
+            Count
+         </td>  
+         <td>
+            Pipeline
+         </td>  
+         <td>
+            Base cost per unit
+         </td>  
+         <td>
+            Single Execution Cost
+         </td>  
+         <td>
+            Monthly Cost
+         </td>     
+      </tr>
+      <tr>
+         <td>
+            Pipeline Orchestration (Activity Run)
+         </td>
+         <td>
+            Azure
+         </td>
+         <td>
+            16
+         </td>  
+         <td>
+            CopyActivityAll
+         </td>  
+         <td>
+            0.00
+         </td>  
+         <td>
+            0.02
+         </td>  
+         <td>
+            11.68
+         </td>     
+      </tr>
+      <tr>
+         <td>
+            Pipeline Orchestration (Activity Run)
+         </td>
+         <td>
+            Self-Hosted
+         </td>
+         <td>
+            15
+         </td>  
+         <td>
+            CopyActivityAll
+         </td>  
+         <td>
+            0.00
+         </td>  
+         <td>
+            0.02
+         </td>  
+         <td>
+            16.42
+         </td>     
+      </tr>
+      <tr>
+         <td>
+            Data Movement Activity (Execution Hours)
+         </td>
+         <td>
+            Self-Hosted
+         </td>
+         <td>
+            0.15
+         </td>  
+         <td>
+            CopyActivityAll
+         </td>  
+         <td>
+            0.10
+         </td>  
+         <td>
+            0.02
+         </td>  
+         <td>
+            10.95
+         </td>     
+      </tr>
+      <tr>
+         <td>
+            Pipeline Activities
+         </td>
+         <td>
+            Azure
+         </td>
+         <td>
+            0.1
+         </td>  
+         <td>
+            CopyActivityAll
+         </td>  
+         <td>
+            0.01
+         </td>  
+         <td>
+            0.00
+         </td>  
+         <td>
+            0.06
+         </td>     
+      </tr>
+      <tr>
+         <td colspan="5"> 
+            Total
+         </td>
+         <td> 0.06 </td>
+         <td> 39.06 </td>
+      </tr>
+      <tr>
+         <td>
+            Pipeline Orchestration (Activity Run)
+         </td>
+         <td>
+            Azure
+         </td>
+         <td>
+            1
+         </td>  
+         <td>
+            ProcessToSilver
+         </td>  
+         <td>
+            0.00
+         </td>  
+         <td>
+            0.00
+         </td>  
+         <td>
+            0.73
+         </td>     
+      </tr>
+      <tr>
+         <td>
+            Pipeline Orchestration (Activity Runs)
+         </td>
+         <td>
+            Self-Hosted
+         </td>
+         <td>
+            1
+         </td>  
+         <td>
+            ProcessToSilver
+         </td>  
+         <td>
+            0.00
+         </td>  
+         <td>
+            0.00
+         </td>  
+         <td>
+            0.00
+         </td>     
+      </tr>
+      <tr>
+         <td>
+            Pipeline Execution
+         </td>
+         <td>
+            Databricks
+         </td>
+         <td>
+            0.0167
+         </td>  
+         <td>
+            ProcessToSilver
+         </td>  
+         <td>
+            0.41
+         </td>  
+         <td>
+            0.012
+         </td>  
+         <td>
+            9.08
+         </td>     
+      </tr>      
+      <tr>
+         <td colspan="5"> 
+            Total
+         </td>
+         <td> 0.012 </td>
+         <td> 9.81 </td>
+      </tr>
+   </tbody>
+   </table>
+
 5. Calculate monthly cost of Databricks cluster owning with the following assumptions:
-  
    - The cluster works 24 / 7.
    - You use Pay-As-You-Go payment method.
    

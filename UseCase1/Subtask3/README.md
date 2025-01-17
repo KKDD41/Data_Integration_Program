@@ -20,10 +20,16 @@
 
 8. In Synapse Workspace, navigate to Data section, find in Linked tab your container, open `“silver/youflix”` and
    check number of rows for each delta table using SQL query.
+   - `youflix_device` – 30
+   - `youflix_subscription` – 3
+   - `youflix_user` – 10000
+   - `youflix_user_subscription_device` – 26746
+   
 9. Take screenshot(s) of SQL queries with count values.
    ![](./screenshots/subscription-count-silver.png)
    ![](./screenshots/device-count-silver.png)
    ![](./screenshots/user-subscription-device-sount-silver.png)
+   ![](./screenshots/user-count-silver.png) 
 
 10. Connect to MS SQL Server YouFlix database and run the following command:
     ```sql
@@ -32,9 +38,15 @@
     ![](./screenshots/table-update.png)
 
 11. Execute pipeline from task 1.1 manually and wait until triggered pipeline from 1.2 is finished.
-12. In Synapse Workspace, navigate to Data section, find in Linked tab your container, open “silver/youflix” and
+12. In Synapse Workspace, navigate to Data section, find in Linked tab your container, open `silver/youflix` and
     check number of rows for each delta table using SQL query.
+    - `youflix_device` – 30
+    - `youflix_subscription` – 3
+    - `youflix_user` – 200000
+    - `youflix_user_subscription_device` – 531173
+
 13. Take screenshot(s) of SQL queries with count values.
     ![](./screenshots/user-subscription-device-sount-upd.png)
     ![](./screenshots/device-count-upd.png)
     ![](./screenshots/subscription-count-upd.png)
+    ![](./screenshots/user-count-upd.png)

@@ -32,10 +32,16 @@
 
 13. In Synapse Workspace, navigate to Data section, find in Linked tab your container, open `silver/youflix` and
     check number of rows for each delta table using SQL query.
+    - `youflix_device` – 30
+    - `youflix_subscription` – 3
+    - `youflix_user` – 10000
+    - `youflix_user_subscription_device` – 26746
+    
 14. Take screenshot(s) of SQL queries in with count values.
     ![](./screenshots/device-count-silver.png)
     ![](./screenshots/subscription-count-silver.png)
     ![](./screenshots/user-subscription-device-sount-silver.png)
+    ![](./screenshots/user-count-silver.png)
 
 15. Connect to MS SQL Server YouFlixDB database and run the following command:
     ```sql
@@ -47,8 +53,16 @@
 17. Run the notebook `uc1_load_bronze_to_silver.ipynb`.
 18. In Synapse Workspace, navigate to Data section, find in Linked tab your container, open “bronze/youflix”
     and check number of rows for each newly loaded file using SQL query.
+    - `youflix_device` – 30
+    - `youflix_subscription` – 3
+    - `youflix_user` – 20000
+    - `youflix_user_subscription_device` – 53342
+    
 19. Take screenshot(s) of SQL queries with count values.
+    ![](./screenshots/device-count-silver-after-rerun.png)
+    ![](./screenshots/subscription-count-silver-after-rerun.png)
     ![](./screenshots/user-subscription-device-sount-silver-after-update.png)
+    ![](./screenshots/user-count-silver-after-rerun.png)
 
 
 ## Full Notebook:

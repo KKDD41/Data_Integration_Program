@@ -1,10 +1,15 @@
 # Task 2.4 Cost Analysis
 
+
 1. First pipeline consumption:
+
    ![](./screenshots/pipeline-1.png)
+
 2. Second pipeline consumption:
+
    ![](./screenshots/pipeline-2.png)
-3. Total cost:
+
+3. Total cost (with assumption that pipelines executes *hourly*):
 
 <table>
 <tbody>
@@ -74,7 +79,7 @@
             0.0125
          </td>  
          <td>
-            0.375
+            9.125
          </td>     
       </tr>  
       <tr>
@@ -82,7 +87,7 @@
          Total
          </td>
          <td>0.0135</td>
-         <td>0.405</td>
+         <td>9.155</td>
       </tr>
       <tr>
          <td>
@@ -127,7 +132,7 @@
             0.477
          </td>  
          <td>
-            14.3
+            348.21
          </td>     
       </tr>
       <tr>
@@ -135,7 +140,7 @@
          Total
          </td>
          <td>0.48</td>
-         <td>15.1</td>
+         <td>348.3</td>
       </tr>
 </tbody>
 </table>

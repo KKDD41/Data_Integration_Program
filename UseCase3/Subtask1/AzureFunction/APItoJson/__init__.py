@@ -7,16 +7,17 @@ from azure.storage.blob import BlobServiceClient
 import azure.functions as func
 from azure.eventgrid import EventGridEvent, EventGridPublisherClient
 import string
+import azure.functions as func
 
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     # Variables 
 
     # TODO: uncomment the row below and name of your Azure Key Vault to the variable
-    keyvault_name=''
+    keyvault_name='akv-di-mentoring-edd'
 
     secret_name_apikey = 'apikey'
-    secret_name_storage_account_name = 'storageaccountname'
+    secret_name_storage_account_name = 'stdimentoringdatalakeed'
     secret_name_storage_account_key = 'storageaccountkey'
     secret_name_topic_key = 'topickey'
 
@@ -24,14 +25,16 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     default_directory = 'bronze\\tmdb\\'
 
     # TODO: uncomment the row below and assign your topic endpoint URL to the variable
-    # topic_endpoint = ''
+    topic_endpoint = 'https://evgt-di-mentoring.westeurope-1.eventgrid.azure.net/api/events'
 
     # Get keys from Keyvault    
     retrieved_storage_account_key = return_value_from_keyvault(par_keyvault_name=keyvault_name,
                                                                par_secret_name=secret_name_storage_account_key)
     storage_account = return_value_from_keyvault(par_keyvault_name=keyvault_name,
                                                  par_secret_name=secret_name_storage_account_name)
+    
     storage_account_url = f"https://{storage_account}.blob.core.windows.net"
+
     api_key = return_value_from_keyvault(par_keyvault_name=keyvault_name, par_secret_name=secret_name_apikey)
     topic_key = return_value_from_keyvault(par_keyvault_name=keyvault_name, par_secret_name=secret_name_topic_key)
 
@@ -42,9 +45,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     # Get movie genres from TMDB API    
     # TODO: uncomment the rows below and complete missing parts with your code
-    # genres_url =
-    # genres_response =
-    # genres_data =
+    genres_url = f"https://api.themoviedb.org/3/genre/movie/list?api_key={api_key}"
+    genres_response = requests.get(genres_url)
+    genres_data = genres_response.json()
 
     # Save API response bodies to JSON files
     timestamp = datetime.datetime.utcnow().strftime("%Y%m%d")
@@ -66,8 +69,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
         # upload JSON file with genres list
         # TODO: uncomment the rows below and complete missing parts with your code
-        # blob_client =
-        # blob_client.upload_blob()
+        blob_client = blob_service_client.get_blob_client(container=container_name, blob=genres_filename)
+        blob_client.upload_blob(json_genres_filename, overwrite=True)
     except Exception as e:
         return func.HttpResponse(f"Error on file storage: {e}")
 
@@ -116,6 +119,7 @@ def return_value_from_keyvault(par_keyvault_name: string, par_secret_name: strin
                                             exclude_managed_identity_credential=False)
     else:
         credential = DefaultAzureCredential()
+
     keyvault_name = par_keyvault_name
     secret_name = par_secret_name
     kv_uri = f'https://{keyvault_name}.vault.azure.net'

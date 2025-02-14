@@ -6,7 +6,7 @@ import pathlib
 from azure.eventhub import EventData
 from azure.eventhub.aio import EventHubProducerClient
 
-EVENT_HUB_CONNECTION_STR = "XXX"
+# EVENT_HUB_CONNECTION_STR = ""
 EVENT_HUB_NAME = "evh-youflix"
 FILES_DIR = 'dummy_dir'
 BATCH_SIZE = 1000

@@ -6,9 +6,7 @@ import pathlib
 from azure.eventhub import EventData
 from azure.eventhub.aio import EventHubProducerClient
 
-#TODO: assign your Event Hub endpoint to the variable below
-EVENT_HUB_CONNECTION_STR = "Endpoint=sb://evhns-di-mentoring-ed.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SLuiGOf3a3+tMUueI1688Sg1fldNvw9JZ+AEhAOVcuI="
-
+EVENT_HUB_CONNECTION_STR = "XXX"
 EVENT_HUB_NAME = "evh-youflix"
 FILES_DIR = 'dummy_dir'
 BATCH_SIZE = 1000

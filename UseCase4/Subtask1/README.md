@@ -11,3 +11,4 @@
 
 3. Take a screenshot of the chart displaying 100 incoming messages.
    ![](./screenshots/messages-content.png)
+

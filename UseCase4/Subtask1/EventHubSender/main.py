@@ -11,7 +11,6 @@ EVENT_HUB_NAME = "evh-youflix"
 FILES_DIR = 'dummy_dir'
 BATCH_SIZE = 1000
 
-
 async def main():
     producer = EventHubProducerClient.from_connection_string(
         conn_str=EVENT_HUB_CONNECTION_STR, eventhub_name=EVENT_HUB_NAME

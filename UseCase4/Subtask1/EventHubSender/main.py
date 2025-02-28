@@ -10,6 +10,7 @@ from azure.eventhub.aio import EventHubProducerClient
 EVENT_HUB_NAME = "evh-youflix"
 FILES_DIR = 'dummy_dir'
 BATCH_SIZE = 1000
+EVENT_HUB_CONNECTION_STR = "Endpoint=sb://evhns-di-mentoring-ed.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SLuiGOf3a3+tMUueI1688Sg1fldNvw9JZ+AEhAOVcuI="
 
 async def main():
     producer = EventHubProducerClient.from_connection_string(

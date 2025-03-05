@@ -30,7 +30,7 @@
 14. In Synapse Workspace, navigate to Data section, find in Linked tab your container, open “silver/events” and
     check number of rows using SQL query. The expected value is 1 020 719 rows.
 15. Take a screenshot of SQL query with count value.
-    ![](./screenshots/count-in-silver.png)
+    ![](./screenshots/count-in-silver-corrected.png)
 
 16. In Synapse Workspace, navigate to Data section, find in Linked tab your container, open
     “quarantine/events”, navigate to the latest subfolder and check number of rows using SQL query. The
@@ -42,3 +42,7 @@
     return partitioning columns and row count in each partition.
 19. Take a screenshot of SQL query with count values.
     ![](./screenshots/count-per-file.png)
+
+20. **UPD:** Problem with one row per file was due to wrong re-creation of the initial pipeline and Stream Analytics job:
+    ![](./screenshots/count-in-silver-11.png)
+    ![](./screenshots/count-in-silver-11-synapse.png)

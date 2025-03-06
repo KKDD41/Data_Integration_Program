@@ -41,7 +41,7 @@
 18. Write SQL query to get count of rows grouped by partition columns in “silver/events”. The query should
     return partitioning columns and row count in each partition.
 19. Take a screenshot of SQL query with count values.
-    ![](./screenshots/count-per-file.png)
+    ![](./screenshots/count-per-partition.png)
 
 20. **UPD:** Problem with one row per file was due to wrong re-creation of the initial pipeline and Stream Analytics job:
     ![](./screenshots/count-in-silver-11.png)

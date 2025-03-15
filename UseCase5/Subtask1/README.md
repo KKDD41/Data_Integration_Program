@@ -17,12 +17,14 @@
 4. In SSMS, write a query against the `dbo.vwEvent`: get only events happened on ‘2022-01-01’. Use
    `[EventTimestamp]` column to apply a filter condition. Execute the query, navigate to the Messages tab, and
    pay attention on Total size of data scanned value. Take a screenshot of the Messages tab.
-   ![](./screenshots/rows-scanned-events.png)
+   ![](./screenshots/where-eventtimest-result.png)
+   ![](./screenshots/where-eventtimest-scanned.png)
 
 5. In SSMS, write a query against the `dbo.vwEvent`: get only events happened on ‘2022-01-01’. Use
    `[FilePathDate]` column to apply a filter condition. Execute the query, navigate to the Messages tab, and pay
    attention on Total size of data scanned value. Take a screenshot of the Messages tab.
-   ![](./screenshots/rows-scanned-events-by-filepath.png)
+   ![](./screenshots/where-filepath-result.png)
+   ![](./screenshots/where-filepath-scanned.png)
 
 6. Try to figure out why Total size of data scanned values are different. Put your explanation in the report.
 
